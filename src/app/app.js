@@ -5,12 +5,11 @@ angular.module( 'ispc', [
     'ui.bootstrap',
     'ui.utils.masks',
     'ui.utils.masks.helpers',
-    'directives.dateMask',
     'angularMoment',
     'ispc.home',
     'ispc.test',
+    'ngMaterial',
     'ngAnimate',
-    'ispc.nav',
     'snap'
 
 ])
