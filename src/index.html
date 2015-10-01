@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="ispc" ng-controller="AppCtrl">
+<head>
+    <title ng-bind="pageTitle"></title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- font awesome from BootstrapCDN -->
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
+
+    <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
+    <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
+
+    <!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
+    <script type="text/javascript" src="<%= file %>"></script><% }); %>
+
+</head>
+<body ng-controller="NavCtrl">
+    <div class="navbar-default navbar-fixed-top">
+        <div class="navbar-header">
+            <div class="navbar-brand" type="button" ng-click="showNav()"><i class="fa fa-bars"></i></div>
+        </div>
+        <a class="navbar-brand">ISPC</a>
+    </div>
+
+
+    <snap-drawer class="navpad">
+        <div>
+            <ul class="nav nav-stacked">
+                <li><a ui-sref="home">Home</a></li>
+                <li><a ui-sref="test">test</a></li>
+            </ul>
+
+        </div>
+    </snap-drawer>
+
+    <snap-content snap-options="snapOpts" snap-id="aSnapper" class="navpad">
+        <div class="container" ui-view="main"></div>
+    </snap-content>
+
+
+
+
+
+
+
+</body>
+</html>
