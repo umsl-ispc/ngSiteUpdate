@@ -9,14 +9,38 @@ angular.module( 'ispc', [
     'ispc.home',
     'ispc.test',
     'ngMaterial',
-    'ngAnimate',
-    'snap'
-
+    'ui.grid',
+    'ngAnimate'
 ])
 
 .config( function myAppConfig ( $stateProvider, $urlRouterProvider ) {
     $urlRouterProvider.otherwise( '/home' );
 })
+
+.config(function ($mdThemingProvider) {
+        $mdThemingProvider.theme('default')
+            .dark()
+            .primaryPalette('light-blue',{
+                'default': '800',
+                'hue-1': '500',
+                'hue-2': '200',
+                'hue-3': '50'
+            })
+            .accentPalette('red',{
+                'default': '800'
+            })
+            .backgroundPalette('blue', {
+                'default': '800',
+                'hue-1': '500',
+                'hue-2': '200',
+                'hue-3': '50'
+            })
+            .warnPalette('deep-purple', {
+                'default': '700'
+            })
+
+        ;
+    })
 
 .run( function run () {
 })
@@ -25,35 +49,29 @@ angular.module( 'ispc', [
     $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
         if ( angular.isDefined( toState.data.pageTitle ) ) {
             $scope.pageTitle = toState.data.pageTitle;
+            $scope.$broadcast('stateChanged');
+
         }
     });
 }])
 
 .controller('NavCtrl',[
         '$scope',
-        'snapRemote',
-        function($scope, snapRemote){
-            var mySnapper;
-            snapRemote.getSnapper().then(function(theSnapper){
-                mySnapper = theSnapper;
-            });
+        '$mdSidenav',
+
+        function($scope, $mdSidenav){
             $scope.snapOpts = {
                 tapToClose: true,
                 touchToDrag: true
             };
-            $scope.showNav = function () {
-                snapRemote.getSnapper().then(function(theSnapper){
-                    theSnapper.open();
-                });
-                console.log('click');
-                if (mySnapper.state().state =="left"){
-                    console.log("its left");
-                    mySnapper.close();
-                } else{
-                    console.log(mySnapper.state());
-                    mySnapper.open('left');
-                }
+            $scope.openLeftMenu = function() {
+                console.log("whoop");
+                $mdSidenav('left').toggle();
             };
+            $scope.$on('stateChanged', function(){
+                $mdSidenav('left').close();
+            });
+
     }])
 
 ;

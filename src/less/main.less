@@ -65,25 +65,30 @@ h2 {
 /**
  * Navigation
  */
-.navpad{
-  padding-top: 49px;
-}
-.nav-stacked{
+.nav{
+  .ul{
+    padding: 0;
+  }
   li{
-    border-bottom: 1px solid black;
-  }
-  li + li{
-    margin-top: 0;
+    a{
+      margin: 0;
+    }
   }
 }
-
-.snap-drawer-left{
-  border-right: solid black;
-  border-right-width: 1px;
+.navBtn{
+  margin:0;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  border-radius: 0;
+  border-bottom: solid 1px black;
 }
 
-.snap-drawer-right{
-  border-left: 1px solid black;
+.staticNav{
+  position: fixed;
+  z-index: 200;
+}
+.navpad{
+  padding-top: 64px;
 }
 .navbar {
   margin-top: 20px;
@@ -93,14 +98,6 @@ h2 {
   }
 }
 
-.snap-content{
-  /*
-   * BG color must be set on snap content otherwise it will
-   * default to transparent causing drawer contents to be visible
-   * in page
-   */
-  background-color: @primaryBackgroundColor;
-}
 
 /**
  * Footer

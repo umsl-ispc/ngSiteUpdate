@@ -10,7 +10,7 @@
     "angular-ui-router": "0.2.15",
     "moment": "2.10.6",
     "angular-material": "0.11.1",
-    "angular-snap": "1.8.4"
+    "angular-ui-grid": "3.0.6"
   },
   "dependencies": {
     "angular-moment": "0.10.3",
