@@ -8,6 +8,7 @@ angular.module( 'ispc', [
     'angularMoment',
     'ispc.home',
     'ispc.test',
+    'ispc.links',
     'ngMaterial',
     'ui.grid',
     'ngAnimate'
