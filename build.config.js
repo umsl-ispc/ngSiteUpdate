@@ -77,13 +77,11 @@ module.exports = {
       'vendor/angular-material/angular-material.min.js',
       'vendor/angular-animate/angular-animate.min.js',
       'vendor/angular-aria/angular-aria.min.js',
-      'vendor/angular-ui-grid/ui-grid.min.js',
 
     ],
     css: [
       'vendor/angular-ui-grid/ui-grid.min.css',
       'vendor/angular-material/angular-material.min.css',
-      'vendor/angular-ui-grid/ui-grid.min.css',
     ],
     assets: [
       'vendor/angular-ui-grid/ui-grid.svg',
