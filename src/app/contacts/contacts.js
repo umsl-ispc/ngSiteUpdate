@@ -17,6 +17,9 @@ angular.module('ispc.contacts', [
             data:{ pageTitle: 'Contact' }
         });
     })
-.controller('ContactsCtrl', function ContactsController($scope){
+.controller('ContactsCtrl',[
+        '$scope',
+        function($scope){
 
-    });
+        }
+    ]);
