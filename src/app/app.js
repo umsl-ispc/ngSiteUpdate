@@ -7,6 +7,7 @@ angular.module( 'ispc', [
     'ui.utils.masks.helpers',
     'angularMoment',
     'ispc.home',
+    'ispc.home.events',
     'ispc.test',
     'ispc.links',
     'ispc.contacts',
