@@ -46,10 +46,16 @@
             <md-button class="navBtn md-primary md-hue-3" ui-sref="home.events">Events</md-button>
         </md-content>
     </md-sidenav>
+    <div class="navpad">
+        <img src="assets/images/msc-ponds.jpg">
+    </div>
+    <div class="jumbotron">
+        <div>{{pageTitle}}</div>
+    </div>
 
 
-<div class="navpad">
-    <div class="container-fluid" ui-view="main"></div>
+<div >
+    <div ui-view="main"></div>
 </div>
 
 

@@ -19,7 +19,23 @@ angular.module('ispc.contacts', [
     })
 .controller('ContactsCtrl',[
         '$scope',
-        function($scope){
+        'ContactsFactory',
+        function($scope, fireTruck){
+            $scope.theContacts = fireTruck.getContacts();
+
+
+            $scope.getName = function (contact) {
+                var retName = '';
+                if(contact.title){
+                    retName += contact.title;
+                    retName += ' ';
+                }
+                retName += (contact.firstName + ' ' + contact.lastName);
+                console.log("display rows");
+                console.log(retName);
+                return retName;
+            };
+
 
         }
     ]);

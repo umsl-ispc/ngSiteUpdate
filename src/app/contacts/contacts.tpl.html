@@ -1,6 +1,39 @@
-<div class="jumbotron">
-    <p>Here's a contact page</p>
-</div>
-<div class="container">
+<div>
+    <md-content>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Contacts</h2>
+        </div>
+        <md-grid-list
+                md-cols="1"
+                md-row-height-gt-md="9:1"
+                md-row-height-md="4:1"
+                md-row-height-sm="3:1"
+                >
+            <md-grid-tile
+                    ng-repeat="contact in theContacts"
+                    md-rowspan="1"
+                    ng-class="tile.background"
+                    >
+                <div flex layout="row" layout-align="space-between center" layout-padding>
+                    <div flex>
+                        <div >
+                            <img class="contactImg" src="assets/images/NoImageAvailable.jpg">
+                        </div>
+                    </div>
+                    <div flex>
+                        <div flex layout="column">
+                            <div flex>Role: {{contact.role}}</div>
+                            <div flex>Name: {{getName(contact)}}</div>
+                            <div flex>Email: {{contact.email}}</div>
+                        </div>
+                    </div>
+                </div>
+
+            </md-grid-tile>
+        </md-grid-list>
+    </md-toolbar>
+    </md-content>
+
 
 </div>

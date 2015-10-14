@@ -11,6 +11,7 @@ angular.module( 'ispc', [
     'ispc.test',
     'ispc.links',
     'ispc.contacts',
+    'ispc.ContactsFactory',
     'ngMaterial',
     'ui.grid',
     'ngAnimate'
