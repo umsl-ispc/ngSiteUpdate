@@ -47,15 +47,16 @@
         </md-content>
     </md-sidenav>
     <div class="navpad">
-        <img src="assets/images/msc-ponds.jpg">
+        <img src="assets/images/msc-ponds.jpg" du-parallax y="background">
     </div>
+
     <div class="jumbotron">
         <div>{{pageTitle}}</div>
     </div>
 
 
 <div >
-    <div ui-view="main"></div>
+    <div ui-view="main" du-scroll-container></div>
 </div>
 
 

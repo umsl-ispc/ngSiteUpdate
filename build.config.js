@@ -77,6 +77,8 @@ module.exports = {
       'vendor/angular-material/angular-material.min.js',
       'vendor/angular-animate/angular-animate.min.js',
       'vendor/angular-aria/angular-aria.min.js',
+      'vendor/angular-scroll/angular-scroll.min.js',
+      'vendor/ng-parallax/angular-parallax.min.js',
 
     ],
     css: [

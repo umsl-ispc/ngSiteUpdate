@@ -14,7 +14,8 @@ angular.module( 'ispc', [
     'ispc.ContactsFactory',
     'ngMaterial',
     'ui.grid',
-    'ngAnimate'
+    'ngAnimate',
+    'duParallax'
 ])
 
 .config( function myAppConfig ( $stateProvider, $urlRouterProvider ) {
@@ -49,14 +50,23 @@ angular.module( 'ispc', [
 .run( function run () {
 })
 
-.controller( 'AppCtrl',[ '$scope', '$location' ,function AppCtrl ( $scope, $location ) {
-    $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
-        if ( angular.isDefined( toState.data.pageTitle ) ) {
-            $scope.pageTitle = toState.data.pageTitle;
-            $scope.$broadcast('stateChanged');
+.controller( 'AppCtrl',[
+        '$scope',
+        '$location',
+        'parallaxHelper',
+        function(
+            $scope,
+            $location,
+            parallaxHelper
+        ){
+            $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
+                if ( angular.isDefined( toState.data.pageTitle ) ) {
+                    $scope.pageTitle = toState.data.pageTitle;
+                    $scope.$broadcast('stateChanged');
 
-        }
-    });
+                }
+            });
+            $scope.background = parallaxHelper.createAnimator(-0.3);
 }])
 
 .controller('NavCtrl',[
