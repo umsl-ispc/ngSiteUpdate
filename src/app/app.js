@@ -9,6 +9,7 @@ angular.module( 'ispc', [
     'ispc.home',
     'ispc.test',
     'ispc.links',
+    'ispc.contacts',
     'ngMaterial',
     'ui.grid',
     'ngAnimate'
@@ -21,7 +22,7 @@ angular.module( 'ispc', [
 .config(function ($mdThemingProvider) {
         $mdThemingProvider.theme('default')
             .dark()
-            .primaryPalette('light-blue',{
+            .primaryPalette('grey',{
                 'default': '800',
                 'hue-1': '500',
                 'hue-2': '200',
@@ -30,8 +31,8 @@ angular.module( 'ispc', [
             .accentPalette('red',{
                 'default': '800'
             })
-            .backgroundPalette('blue', {
-                'default': '800',
+            .backgroundPalette('blue-grey', {
+                'default': '900',
                 'hue-1': '500',
                 'hue-2': '200',
                 'hue-3': '50'
